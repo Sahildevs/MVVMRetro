@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/fragment1">
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.retromvvmkt.ui.view.Fragment1"
+        android:label="Home"
+        tools:layout="@layout/fragment_1">
+        <action
+            android:id="@+id/action_fragment12_to_fragment22"
+            app:destination="@id/fragment2" />
+        <action
+            android:id="@+id/action_fragment1_to_fragment4"
+            app:destination="@id/fragment4"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.retromvvmkt.ui.view.Fragment2"
+        android:label="Notification"
+        tools:layout="@layout/fragment_2">
+        <action
+            android:id="@+id/action_fragment22_to_fragment3"
+            app:destination="@id/fragment3" />
+        <action
+            android:id="@+id/action_fragment2_to_fragment1"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="com.example.retromvvmkt.ui.view.Fragment3"
+        android:label="Setting"
+        tools:layout="@layout/fragment_3">
+        <action
+            android:id="@+id/action_fragment3_to_fragment1"
+            app:destination="@id/fragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="com.example.retromvvmkt.ui.view.Fragment4"
+        android:label="Info"
+        tools:layout="@layout/fragment_4">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="desc"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragment4_to_fragment1"
+            app:destination="@id/fragment1"
+            app:popUpTo="@id/fragment1"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/explore"
+        android:name="com.example.retromvvmkt.ui.view.Explore"
+        android:label="Explore"
+        tools:layout="@layout/fragment_explore" />
+    <fragment
+        android:id="@+id/help"
+        android:name="com.example.retromvvmkt.ui.view.Help"
+        android:label="Help"
+        tools:layout="@layout/fragment_help" />
+</navigation>
